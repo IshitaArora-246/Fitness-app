@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "741681427452",
+    "project_id": "fitness-app-4aabd",
+    "storage_bucket": "fitness-app-4aabd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741681427452:android:f1c847776d12fd5a20f879",
+        "android_client_info": {
+          "package_name": "com.ishita.fitnessApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741681427452-n2vt7p77rshqcgo33cpk9elpec1o4vce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEKR6PykPDNR2NFc6WN3pikIieF5AcFkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741681427452-n2vt7p77rshqcgo33cpk9elpec1o4vce.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
