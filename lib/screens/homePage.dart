@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:fitnessApp/widgets/sideBar.dart';
 import 'package:pedometer/pedometer.dart';
@@ -85,9 +87,12 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 40,
                 ),
-                Icon(Icons.run_circle, size: 200),
+                Image.asset(
+                  "assets/images/exercise.png",
+                  width: 300,
+                ),
                 SizedBox(height: 10),
-                Text("$_steps Steps",
+                Text("40 Steps",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
