@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Fitness App',
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark(),
       // theme: MyTheme.lightTheme(context),
       // darkTheme: Mytheme.darkTheme(context),
       home: HomePage(),

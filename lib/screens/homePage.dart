@@ -1,12 +1,8 @@
 import 'dart:ui';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnessApp/widgets/sideBar.dart';
 import 'package:pedometer/pedometer.dart';
-import 'package:flutter_mobile_carousel/carousel.dart';
-import 'package:flutter_mobile_carousel/carousel_arrow.dart';
-import 'package:flutter_mobile_carousel/default_carousel_item.dart';
-import 'package:flutter_mobile_carousel/types.dart';
 
 String formatDate(DateTime d) {
   return d.toString().substring(0, 19);
@@ -87,6 +83,15 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 40,
                 ),
+                Row(
+                  children: [
+                    IconButton(
+                        icon: Icon(Icons.drag_handle),
+                        onPressed: () {
+                          return Sidebar();
+                        })
+                  ],
+                ),
                 Image.asset(
                   "assets/images/exercise.png",
                   width: 300,
@@ -104,6 +109,8 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
+                        // CarouselSlider(
+                        //     items: [
                         Stack(
                           children: [
                             Container(
@@ -191,6 +198,18 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ],
+                      //       options: CarouselOptions(
+                      //         height: 180.0,
+                      //         enlargeCenterPage: true,
+                      //         autoPlay: true,
+                      //         aspectRatio: 16 / 9,
+                      //         autoPlayCurve: Curves.fastOutSlowIn,
+                      //         enableInfiniteScroll: true,
+                      //         autoPlayAnimationDuration:
+                      //             Duration(milliseconds: 800),
+                      //         viewportFraction: 0.8,
+                      //       )),
+                      // ],
                     ),
                   ),
                 ),
