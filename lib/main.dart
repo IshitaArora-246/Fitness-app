@@ -1,10 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitnessApp/pedometer.dart';
+import 'package:fitnessApp/screens/BlogScreen.dart';
 import 'package:fitnessApp/screens/homePage.dart';
-// import 'package:fitnessApp/screens/homePage.dart';
-// import 'package:fitnessApp/screens/pedometer.dart';
-// import 'package:fitnessApp/screens/profile.dart';
-// import 'package:fitnessApp/tempPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -29,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       // theme: MyTheme.lightTheme(context),
       // darkTheme: Mytheme.darkTheme(context),
-      home: HomePage(),
+      home: BlogScreen(),
     );
   }
 }
