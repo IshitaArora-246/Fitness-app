@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fitness App',
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
+      // themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark(),
       // theme: MyTheme.lightTheme(context),
       // darkTheme: Mytheme.darkTheme(context),
-      home: BlogScreen(),
+      home: HomePage(),
     );
   }
 }

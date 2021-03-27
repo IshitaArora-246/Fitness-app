@@ -8,7 +8,7 @@ class ApiService {
     Map<String, dynamic> newsArticles;
     try {
       String url =
-          "https://newsapi.org/v2/everything?qinTitle=fitness,workout&q=bitcoin&apiKey=$apiKey";
+          "http://newsapi.org/v2/everything?qinTitle=fitness+workout&apiKey=$apiKey";
       http.Response r = await http.get(url);
       newsArticles = jsonDecode(r.body);
     } catch (e) {
