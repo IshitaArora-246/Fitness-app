@@ -79,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10)),
                           ),
+                          // ignore: missing_return
                           validator: (value) {
                             if (value.length != 10) {
                               return "Invalid phone number";

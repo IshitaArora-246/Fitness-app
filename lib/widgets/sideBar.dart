@@ -45,6 +45,7 @@ class Sidebar extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => ProfilePage(),
                     ),
+                    // ignore: non_constant_identifier_names
                     (HomePage) => true);
               },
             ),
@@ -64,6 +65,7 @@ class Sidebar extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => HomePage(),
                     ),
+                    // ignore: non_constant_identifier_names
                     (HomePage) => true);
               },
             ),
@@ -83,6 +85,7 @@ class Sidebar extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => FaqPage(),
                     ),
+                    // ignore: non_constant_identifier_names
                     (HomePage) => true);
               },
             ),

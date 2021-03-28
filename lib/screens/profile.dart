@@ -1,4 +1,3 @@
-import 'package:fitnessApp/widgets/sideBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   Color teal = Color(0XFF338678);
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

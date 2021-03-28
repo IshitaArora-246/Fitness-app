@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+// ignore: must_be_immutable
 class OtpVerification extends StatefulWidget {
   String verID;
   String phoneNumber;
@@ -234,7 +235,7 @@ class _OtpVerificationState extends State<OtpVerification> {
           setState(() {
             loading = true;
           });
-          AuthCredential credential = PhoneAuthProvider.getCredential(
+          AuthCredential credential = PhoneAuthProvider.credential(
               verificationId: widget.verID, smsCode: otpString);
           await OTPService().signInWithCred(credential, context, () {
             textEditingController.clear();

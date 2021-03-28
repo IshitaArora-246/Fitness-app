@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Stream<StepCount> _stepCountStream;
   Stream<PedestrianStatus> _pedestrianStatusStream;
-  String _status = '?', _steps = '?';
+  String _status = '?', _steps = '8000';
 
   @override
   void initState() {
@@ -67,7 +67,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final steps = 10250;
-    final Color teal = Color(0XFF338678);
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     var calories = (steps / 35).round();
@@ -96,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   width: 300,
                 ),
                 SizedBox(height: 10),
-                Text("40 Steps",
+                Text("$_steps Steps",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
