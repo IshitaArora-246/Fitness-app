@@ -6,14 +6,12 @@ String formatDate(DateTime d) {
   return d.toString().substring(0, 19);
 }
 
-class StepCounter extends StatefulWidget {
-  StepCounter({Key key}) : super(key: key);
-
+class StepsCounter extends StatefulWidget {
   @override
-  _StepCounterState createState() => _StepCounterState();
+  _StepsCounterState createState() => _StepsCounterState();
 }
 
-class _StepCounterState extends State<StepCounter> {
+class _StepsCounterState extends State<StepsCounter> {
   Stream<StepCount> _stepCountStream;
   Stream<PedestrianStatus> _pedestrianStatusStream;
   String _status = '?', _steps = '?';
@@ -33,6 +31,8 @@ class _StepCounterState extends State<StepCounter> {
 
   void onPedestrianStatusChanged(PedestrianStatus event) {
     print(event);
+    print("status called");
+
     setState(() {
       _status = event.status;
     });
@@ -61,8 +61,9 @@ class _StepCounterState extends State<StepCounter> {
 
     _stepCountStream = Pedometer.stepCountStream;
     _stepCountStream.listen(onStepCount).onError(onStepCountError);
-
+    print("init called");
     if (!mounted) return;
+    print("init called");
   }
 
   @override
@@ -70,7 +71,7 @@ class _StepCounterState extends State<StepCounter> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Pedometer App'),
+          title: const Text('Pedometer example app'),
         ),
         body: Center(
           child: Column(
@@ -81,15 +82,13 @@ class _StepCounterState extends State<StepCounter> {
                 style: TextStyle(fontSize: 30),
               ),
               Text(
-                "$_steps",
+                _steps,
                 style: TextStyle(fontSize: 60),
               ),
               Divider(
                 height: 100,
-                thickness: 1,
-                color: Colors.grey[400],
-                indent: 50,
-                endIndent: 50,
+                thickness: 0,
+                color: Colors.white,
               ),
               Text(
                 'Pedestrian status:',

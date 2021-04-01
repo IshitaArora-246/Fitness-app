@@ -66,14 +66,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final steps = 10250;
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    var calories = (steps / 35).round();
     return Scaffold(
         drawer: Sidebar(),
         body: Container(
           color: Colors.white,
+          height: screenHeight,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -90,13 +89,15 @@ class _HomePageState extends State<HomePage> {
                         })
                   ],
                 ),
-                Image.asset(
-                  "assets/images/exercise.png",
-                  width: 300,
+                Icon(
+                  Icons.directions_walk,
+                  size: 120,
+                  color: Colors.black,
                 ),
                 SizedBox(height: 10),
                 Text("$_steps Steps",
                     style: TextStyle(
+                      color: Colors.black,
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
                     )),
@@ -196,39 +197,10 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ],
-                      //       options: CarouselOptions(
-                      //         height: 180.0,
-                      //         enlargeCenterPage: true,
-                      //         autoPlay: true,
-                      //         aspectRatio: 16 / 9,
-                      //         autoPlayCurve: Curves.fastOutSlowIn,
-                      //         enableInfiniteScroll: true,
-                      //         autoPlayAnimationDuration:
-                      //             Duration(milliseconds: 800),
-                      //         viewportFraction: 0.8,
-                      //       )),
-                      // ],
                     ),
                   ),
                 ),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 15.0),
-                      child: Text(
-                        "Calories burnt Today : $calories",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset("assets/images/grf.png"),
-                ),
               ],
             ),
           ),
