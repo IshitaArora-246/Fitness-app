@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitnessApp/database/database.dart';
+import 'package:fitnessApp/task.dart';
 import 'package:fitnessApp/tempPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,8 +11,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.white30,
-    statusBarColor: Colors.white30,
+    systemNavigationBarColor: Colors.transparent,
+    statusBarColor: Colors.transparent,
   ));
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Fitness App',
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: CheckUserStatus(),
+      home: MyPage(),
     );
   }
 }

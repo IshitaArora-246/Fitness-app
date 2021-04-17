@@ -23,7 +23,7 @@ class OTPService {
     } catch (e) {
       print("exception in signinwithcred $e");
       stopLoading();
-      Scaffold.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         duration: Duration(seconds: 1),
         content: Text("Invalid OTP! Please Try Again"),
       ));
@@ -50,7 +50,7 @@ class OTPService {
       },
       verificationFailed: (FirebaseAuthException exception) {
         stopLoading();
-        // Scaffold.of(context).showSnackBar(SnackBar(
+        // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         //   duration: Duration(seconds: 2),
         //   content: Text("Oops! Unexpected Error occured. Please Try again."),
         // ));
