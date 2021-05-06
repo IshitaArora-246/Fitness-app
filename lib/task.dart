@@ -17,7 +17,7 @@ class MyPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                  height: 200,
+                  height: 185,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(30),
@@ -61,14 +61,16 @@ class MyPage extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 8),
                                 child: CircleAvatar(
-                                  backgroundColor: Colors.white,
+                                  backgroundImage: NetworkImage(
+                                      "https://pbs.twimg.com/profile_images/720270636434763777/dB0QdPId.jpg"),
                                   minRadius: 30,
                                 ),
                               ),
                               Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Naman",
+                                    "Naman Jain",
                                     style: TextStyle(fontSize: 24),
                                   ),
                                   Row(
@@ -94,7 +96,7 @@ class MyPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      height: 170,
+                      height: 155,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8),
@@ -140,17 +142,23 @@ class MyPage extends StatelessWidget {
                               ],
                             ),
                             SizedBox(height: 10),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    cardData(
-                                        "Date of Birth: ", "15 April, 2021"),
-                                    cardData("E-Mail: ", "example@gmail.com"),
-                                    cardData("Location: ", "Guwahati, Assam"),
-                                  ],
-                                ),
-                              ],
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      cardData(
+                                          "Date of Birth: ", "15 April, 2021"),
+                                      cardData("E-Mail: ", "example@gmail.com"),
+                                      cardData("Location: ", "Guwahati, Assam"),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             )
                           ],
                         ),
@@ -160,7 +168,7 @@ class MyPage extends StatelessWidget {
                     Column(
                       children: [
                         Container(
-                          height: 170,
+                          height: 160,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(8),
@@ -207,16 +215,23 @@ class MyPage extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        cardData("School: ", "DPS, Guwahati"),
-                                        cardData("Standard: ", "10"),
-                                        cardData("Location: ", "Kamrup, Assam"),
-                                      ],
-                                    ),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          cardData("School: ", "DPS, Guwahati"),
+                                          cardData("Standard: ", "10"),
+                                          cardData(
+                                              "Location: ", "Kamrup, Assam"),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 )
                               ],
                             ),
@@ -282,7 +297,7 @@ class MyPage extends StatelessWidget {
                     ),
                     SizedBox(height: 15),
                     Container(
-                        height: 70,
+                        height: 80,
                         width: screenWidth,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
@@ -294,7 +309,7 @@ class MyPage extends StatelessWidget {
                             child: Text("EDIT SUGGESTED TARGETS",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 16))))
+                                    fontSize: 17))))
                   ],
                 ),
               ),
