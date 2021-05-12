@@ -1,6 +1,9 @@
 import 'package:fitness_app/models/todo_model.dart';
+import 'package:fitness_app/provider/todos.dart';
+import 'package:fitness_app/utils/utils%20.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:provider/provider.dart';
 
 class TodoWidget extends StatelessWidget {
   final Todo todo;
@@ -26,7 +29,7 @@ class TodoWidget extends StatelessWidget {
           IconSlideAction(
             icon: Icons.delete,
             color: Colors.redAccent,
-            onTap: () {},
+            onTap: () => deleteTodo(context, todo),
             caption: "Delete",
           ),
         ],
@@ -60,11 +63,11 @@ class TodoWidget extends StatelessWidget {
                       fontSize: 22,
                     ),
                   ),
-                  if (todo.desc.isNotEmpty)
+                  if (todo.description.isNotEmpty)
                     Container(
                       margin: EdgeInsets.only(top: 4),
                       child: Text(
-                        todo.desc,
+                        todo.description,
                         style: TextStyle(fontSize: 20, height: 1.5),
                       ),
                     )
@@ -73,5 +76,12 @@ class TodoWidget extends StatelessWidget {
             )
           ],
         ));
+  }
+
+  deleteTodo(BuildContext context, Todo todo) {
+    final todoList = Provider.of<TodosProvider>(context, listen: false);
+    todoList.deleteTodo(todo);
+
+    Utils.showSnackBar(context, "Task deleted!");
   }
 }

@@ -1,61 +1,59 @@
+
 import 'package:fitness_app/widgets/show_dialog_box.dart';
 import 'package:fitness_app/widgets/todo_list.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    final tabs = [TodoList(), Container()];
+    final tabs = [
+      TodoList(),
+      Container(),
+    ];
+
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(title: Text("To-do"), backgroundColor: Colors.pink),
+      appBar: AppBar(
+        title: Text("Todos"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.pink,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
-          selectedItemColor: Colors.white,
-          currentIndex: selectedIndex,
-          onTap: (index) => setState(() {
-                selectedIndex = index;
-              }),
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.today_outlined,
-                size: 28,
-              ),
-              label: "Todos",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.done,
-                size: 28,
-              ),
-              label: "Completed",
-            )
-          ]),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-              barrierDismissible: false,
-              context: context,
-              builder: (context) => ShowTodoDialogBox());
-        },
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        backgroundColor: Colors.black,
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
+        backgroundColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Colors.white.withOpacity(0.7),
+        selectedItemColor: Colors.white,
+        currentIndex: selectedIndex,
+        onTap: (index) => setState(() {
+          selectedIndex = index;
+        }),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fact_check_outlined),
+            label: 'Todos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.done, size: 28),
+            label: 'Completed',
+          ),
+        ],
       ),
       body: tabs[selectedIndex],
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        backgroundColor: Colors.black,
+        onPressed: () => showDialog(
+          context: context,
+          builder: (context) => ShowTodoDialogBox(),
+          barrierDismissible: false,
+        ),
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

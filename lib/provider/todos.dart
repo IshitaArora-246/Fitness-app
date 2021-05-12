@@ -6,7 +6,7 @@ class TodosProvider extends ChangeNotifier {
     Todo(
       createdTime: DateTime.now(),
       title: 'Buy Food 😋',
-      desc: '''- Eggs
+      description: '''- Eggs
 - Milk
 - Bread
 - Water''',
@@ -14,7 +14,7 @@ class TodosProvider extends ChangeNotifier {
     Todo(
       createdTime: DateTime.now(),
       title: 'Plan family trip to Norway',
-      desc: '''- Rent some hotels
+      description: '''- Rent some hotels
 - Rent a car
 - Pack suitcase''',
     ),
@@ -29,4 +29,15 @@ class TodosProvider extends ChangeNotifier {
   ];
 
   List<Todo> get todos => _todos.where((todo) => todo.isDone == false).toList();
+
+  addTodo(Todo todo) {
+    _todos.add(todo);
+    notifyListeners();
+  }
+
+  deleteTodo(Todo todo) {
+    _todos.remove(todo);
+    notifyListeners();
+  }
+
 }

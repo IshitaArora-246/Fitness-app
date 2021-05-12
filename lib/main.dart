@@ -22,7 +22,11 @@ class MyApp extends StatelessWidget {
         return TodosProvider();
       },
       child: MaterialApp(
-        title: 'Fitness App',
+        title: 'Todo App',
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+          scaffoldBackgroundColor: Color(0xFFf6f5ee),
+        ),
         debugShowCheckedModeBanner: false,
         home: HomePage(),
       ),

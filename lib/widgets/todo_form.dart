@@ -28,6 +28,8 @@ class TodoForm extends StatelessWidget {
             }
             return null;
           },
+          cursorHeight: 24,
+          cursorColor: Colors.pink,
           decoration: InputDecoration(
               hintText: "Title",
               enabledBorder: UnderlineInputBorder(
@@ -38,12 +40,8 @@ class TodoForm extends StatelessWidget {
         SizedBox(height: 10),
         TextFormField(
           initialValue: title,
-          validator: (value) {
-            if (value.isEmpty) {
-              return "Title can't be empty";
-            }
-            return null;
-          },
+          cursorHeight: 24,
+          cursorColor: Colors.pink,
           decoration: InputDecoration(
               hintText: "Description",
               enabledBorder: UnderlineInputBorder(
@@ -51,9 +49,9 @@ class TodoForm extends StatelessWidget {
               focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.pink, width: 2))),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 20),
         InkWell(
-          onTap: () {},
+          onTap: onSaveTodo,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 30),
             height: 45,
