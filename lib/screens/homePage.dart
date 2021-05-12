@@ -1,4 +1,4 @@
-
+import 'package:fitness_app/widgets/completed_list.dart';
 import 'package:fitness_app/widgets/show_dialog_box.dart';
 import 'package:fitness_app/widgets/todo_list.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final tabs = [
       TodoList(),
-      Container(),
+      CompletedList(),
     ];
 
     return Scaffold(

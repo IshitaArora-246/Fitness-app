@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class TodoForm extends StatelessWidget {
   final String title;
-  final String desc;
+  final String description;
   final ValueChanged<String> onChangedTitle;
-  final ValueChanged<String> onChangedDesc;
+  final ValueChanged<String> onChangedDescription;
   final VoidCallback onSaveTodo;
 
   const TodoForm(
       {Key key,
-      this.title,
-      this.desc,
+      this.title = "",
+      this.description = "",
       @required this.onChangedTitle,
-      @required this.onChangedDesc,
+      @required this.onChangedDescription,
       @required this.onSaveTodo})
       : super(key: key);
   @override
@@ -22,6 +22,7 @@ class TodoForm extends StatelessWidget {
       children: [
         TextFormField(
           initialValue: title,
+          onChanged: onChangedTitle,
           validator: (value) {
             if (value.isEmpty) {
               return "Title can't be empty";
@@ -39,11 +40,13 @@ class TodoForm extends StatelessWidget {
         ),
         SizedBox(height: 10),
         TextFormField(
-          initialValue: title,
+          initialValue: description,
+          onChanged: onChangedDescription,
           cursorHeight: 24,
+          maxLines: 3,
           cursorColor: Colors.pink,
           decoration: InputDecoration(
-              hintText: "Description",
+              hintText: "description",
               enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.pink)),
               focusedBorder: UnderlineInputBorder(

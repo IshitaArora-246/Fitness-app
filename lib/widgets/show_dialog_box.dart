@@ -14,7 +14,7 @@ class ShowTodoDialogBox extends StatefulWidget {
 class _ShowTodoDialogBoxState extends State<ShowTodoDialogBox> {
   final _formKey = GlobalKey<FormState>();
   String title = "";
-  String desc = "";
+  String description = "";
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -37,15 +37,15 @@ class _ShowTodoDialogBoxState extends State<ShowTodoDialogBox> {
                 onChangedTitle: (title) => setState(() {
                       return this.title = title;
                     }),
-                onChangedDesc: (desc) => setState(() {
-                      return this.desc = desc;
+                onChangedDescription: (description) => setState(() {
+                      return this.description = description;
                     }),
                 onSaveTodo: addTodo)
           ],
         ),
       ),
     );
-  } 
+  }
 
   void addTodo() {
     final isValid = _formKey.currentState.validate();
@@ -56,7 +56,7 @@ class _ShowTodoDialogBoxState extends State<ShowTodoDialogBox> {
       final todo = Todo(
         id: DateTime.now().toString(),
         title: title,
-        description: desc,
+        description: description,
         createdTime: DateTime.now(),
       );
 
