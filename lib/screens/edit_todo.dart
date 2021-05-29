@@ -19,7 +19,6 @@ class _EditTodoPageState extends State<EditTodoPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     title = widget.todo.title;
     description = widget.todo.description;

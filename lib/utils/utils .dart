@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Utils {
   static void showSnackBar(BuildContext context, String text) {
-    Scaffold.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(text),
     ));
   }
